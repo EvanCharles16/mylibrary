@@ -29,11 +29,14 @@ const Index = (props) => {
           marginLeft: "24rem",
         }}
       >
-        My Library{" "}
+        My Library
       </h2>
       <div className="row">
         <div className="col-md-6 mt-3">
-          <div className="card" style={{ width: "20rem" }}>
+          <div
+            className="card"
+            style={{ width: "20rem", position: "absolute" }}
+          >
             <img
               src={buku}
               className="card-img-top"
