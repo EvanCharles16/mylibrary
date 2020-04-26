@@ -20,12 +20,27 @@ const Index = (props) => {
 
   return (
     <div className="container">
-      <h2 className="text-center mb-4 mt-4">My Library </h2>
+      <h2
+        className="text-center mb-4 mt-4 bg-light "
+        style={{
+          position: "relative",
+          border: "2px solid black",
+          width: "18rem",
+          marginLeft: "24rem",
+        }}
+      >
+        My Library{" "}
+      </h2>
       <div className="row">
         <div className="col-md-6 mt-3">
           <div className="card" style={{ width: "20rem" }}>
-            <img src={buku} className="card-img-top" alt="buku" />
-            <div className="card-body">
+            <img
+              src={buku}
+              className="card-img-top"
+              alt="buku"
+              style={{ border: "2px solid black" }}
+            />
+            <div className="card-body" style={{ border: "1px solid black" }}>
               <h5 className="card-title">Add Book</h5>
               <button className="btn btn-primary" onClick={showAdd}>
                 <i class="fas fa-user-plus"></i>

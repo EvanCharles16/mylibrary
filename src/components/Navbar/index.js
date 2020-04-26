@@ -12,7 +12,9 @@ const Index = (props) => {
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand">EC</Link>
+      <Link className="navbar-brand">
+        <h3>EC</h3>
+      </Link>
 
       <button
         className="navbar-toggler"
@@ -27,10 +29,10 @@ const Index = (props) => {
       </button>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
+        <ul className="navbar-nav mr-auto ">
+          <li className="nav-item active ">
             <Link className="nav-link" to="/libraries">
-              My Library
+              <h3>My Library</h3>
             </Link>
           </li>
         </ul>

@@ -23,19 +23,11 @@ const Edit = (props) => {
   };
 
   const handleChange = (event) => {
-    let { name, value, type, checked } = event.currentTarget;
-    if (type === "checkbox") {
-      setData({
-        ...data,
-        [name]: checked,
-      });
-      console.log(checked);
-    } else {
-      setData({
-        ...data,
-        [name]: value,
-      });
-    }
+    let { name, value } = event.currentTarget;
+    setData({
+      ...data,
+      [name]: value,
+    });
   };
 
   useEffect(() => {

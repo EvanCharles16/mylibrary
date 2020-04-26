@@ -18,13 +18,13 @@ const Item = (props) => {
   };
 
   return (
-    <tr>
+    <tr className="text-center">
       <td>{props.data.bookTitle}</td>
       <td>{props.data.years}</td>
       <td>{props.data.bookNumber}</td>
       <td>{props.data.status} </td>
       <td>
-        <button className="btn btn-warning" onClick={handleClickUbah}>
+        <button className="btn btn-warning mr-3" onClick={handleClickUbah}>
           <i class="far fa-edit">Edit</i>
         </button>
         <button className="btn btn-danger" onClick={handleClick}>
