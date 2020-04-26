@@ -4,6 +4,8 @@ import { Button, Modal } from "react-bootstrap";
 
 import { edit, hideEdit } from "./../../actioncreators/libraries";
 
+import imgedit from "../../img/edit.png";
+
 const Edit = (props) => {
   const [data, setData] = useState({
     bookNumber: props.data.bookNumber,
@@ -46,6 +48,12 @@ const Edit = (props) => {
       <Modal.Header closeButton className="bg-warning text-white">
         <Modal.Title>Edit Book</Modal.Title>
       </Modal.Header>
+      <img
+        src={imgedit}
+        alt="edit"
+        style={{ width: "18rem" }}
+        className="mx-auto mt-4"
+      />
       <Modal.Body>
         <div className="form-group">
           <label htmlFor="bookTitle">Title</label>
