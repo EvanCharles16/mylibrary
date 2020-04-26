@@ -6,10 +6,10 @@ import { add, hideAdd } from "./../../actioncreators/libraries";
 
 const Add = (props) => {
   const [data, setData] = useState({
-    number: 0,
+    bookNumber: 0,
     status: false,
-    title: "",
-    year: 1990,
+    bookTitle: "",
+    years: 1990,
   });
 
   const handleAdd = () => {
@@ -22,7 +22,7 @@ const Add = (props) => {
 
   const handleChange = (event) => {
     let { name, value, type, checked } = event.currentTarget;
-    if (type == "checkbox") {
+    if (type === "checkbox") {
       setData({
         ...data,
         [name]: checked,
@@ -39,56 +39,48 @@ const Add = (props) => {
   return (
     <Modal show={props.isShowAdd} onHide={handleClose}>
       <Modal.Header closeButton className="bg-primary text-white">
-        <Modal.Title>Add Library</Modal.Title>
+        <Modal.Title>Add Book</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div class="form-group">
-          <label for="title">Title</label>
+        <div className="form-group">
+          <label for="bookTitle">Title</label>
           <input
             type="text"
             class="form-control"
-            id="title"
-            name="title"
-            value={data.title}
+            id="bookTitle"
+            name="bookTitle"
+            value={data.bookTitle}
             onChange={handleChange}
           />
         </div>
-        <div class="form-group">
-          <label for="year">Year</label>
+        <div className="form-group">
+          <label htmlFor="years">Year</label>
           <input
             type="number"
             class="form-control"
-            id="year"
-            name="year"
-            value={data.year}
+            id="years"
+            name="years"
+            value={data.years}
             onChange={handleChange}
           />
         </div>
-        <div class="form-group">
-          <label for="number">Number</label>
+        <div className="form-group">
+          <label htmlFor="bookNumber">Number</label>
           <input
             type="number"
             class="form-control"
-            id="number"
-            name="number"
-            value={data.number}
+            id="bookNumber"
+            name="bookNumber"
+            value={data.bookNumber}
             onChange={handleChange}
           />
         </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="status"
-              name="status"
-              checked={data.status}
-              onChange={handleChange}
-            />
-            <label class="form-check-label" htmlFor="status">
-              di pinjam
-            </label>
-          </div>
+        <div className="form-group">
+          <label htmlFor="status">Status</label>
+          <select className="form-control" id="status" name="status">
+            <option>Available</option>
+            <option>Not Available</option>
+          </select>
         </div>
       </Modal.Body>
       <Modal.Footer>

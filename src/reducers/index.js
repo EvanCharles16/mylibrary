@@ -1,9 +1,7 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import libraries from './libraries';
-import students from './students';
+import libraries from "./libraries";
 
 export default combineReducers({
-    libraries: libraries,
-    students: students
+  libraries: libraries,
 });

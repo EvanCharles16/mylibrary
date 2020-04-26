@@ -1,22 +1,29 @@
 import axios from "axios";
 
-const url = "http://localhost:8000/libraries";
+const url = "https://libraryz-project.herokuapp.com/library";
 
-export const add = (data) => {
-  // return dispatch => {
-  // axios.post(url, data)
-  //     .then((response)=> {
-  //         dispatch({
-  //             type: 'LIBRARIES_ADD',
-  //             payload: response.data
-  //         })
-  //     })
-  // })
+// Get
+export const getData = (query) => {
+  let pertanyaan;
+  if (query) {
+    pertanyaan = { params: { title: query } };
+  }
   return async (dispatch) => {
-    const response = await axios.post(url, data);
+    const response = await axios.get(`${url}`, pertanyaan);
+    dispatch({
+      type: "LIBRARIES_GET_DATA",
+      payload: response.data.data,
+    });
+  };
+};
+
+// Post
+export const add = (data) => {
+  return async (dispatch) => {
+    const response = await axios.post(`${url}`, data);
     dispatch({
       type: "LIBRARIES_ADD",
-      payload: response.data,
+      payload: response.data.data,
     });
 
     dispatch({
@@ -25,13 +32,13 @@ export const add = (data) => {
   };
 };
 
+// Delete
 export const deleteData = (id) => {
   return async (dispatch) => {
-    await axios.delete(`${url}/${id}`);
-
+    const response = await axios.delete(`${url}/${id}`);
     dispatch({
       type: "LIBRARIES_DELETE_DATA",
-      payload: id,
+      payload: response.data.data,
     });
 
     dispatch({
@@ -40,30 +47,17 @@ export const deleteData = (id) => {
   };
 };
 
+// Edit
 export const edit = (data) => {
   return async (dispatch) => {
-    const response = await axios.put(`${url}/${data.id}`, data);
+    await axios.put(`${url}/${data._id}`, data);
     dispatch({
       type: "LIBRARIES_EDIT_DATA",
-      payload: response.data,
+      payload: data,
     });
 
     dispatch({
       type: "LIBRARIES_HIDE_EDIT",
-    });
-  };
-};
-
-export const getData = (query) => {
-  let pertanyaan;
-  if (query) {
-    pertanyaan = { params: { title: query } };
-  }
-  return async (dispatch) => {
-    const response = await axios.get(url, pertanyaan);
-    dispatch({
-      type: "LIBRARIES_GET_DATA",
-      payload: response.data,
     });
   };
 };
@@ -85,20 +79,6 @@ export const hideEdit = () => {
     type: "LIBRARIES_HIDE_EDIT",
   };
 };
-
-// export const search = (query) => {
-//     return async(dispatch) => {
-//         const response = await axios.get(url, {
-//             params: {
-//                 title: query
-//             }
-//         });
-//         dispatch({
-//             type: 'LIBRARIES_GET_DATA',
-//             payload: response.data
-//         })
-//     }
-// }
 
 export const showAdd = () => {
   return {

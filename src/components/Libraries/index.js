@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import buku from "../../img/buku.webp";
+import banner from "../../img/banner.png";
 
 import { getData, showAdd } from "./../../actioncreators/libraries";
 
@@ -11,41 +13,55 @@ const Index = (props) => {
   };
 
   const handleKeyUp = (event) => {
-      if (event.keyCode == 13){
-          props.search(event.currentTarget.value);
-      }
+    if (event.keyCode === 13) {
+      props.search(event.currentTarget.value);
+    }
+  };
 
-  }
   return (
-    <div>
-      <h2>Libraries</h2>
-      <div className="form-inline">
-        <button className="btn btn-primary" onClick={showAdd}>
-          Tambah
-        </button>
+    <div className="container">
+      <h2 className="text-center mb-4 mt-4">My Library </h2>
+      <div className="row">
+        <div className="col-md-6 mt-3">
+          <div className="card" style={{ width: "20rem" }}>
+            <img src={buku} className="card-img-top" alt="buku" />
+            <div className="card-body">
+              <h5 className="card-title">Add Book</h5>
+              <button className="btn btn-primary" onClick={showAdd}>
+                <i class="fas fa-user-plus"></i>
+              </button>
 
-        <div class="input-group mb-3">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            onKeyUp={handleKeyUp}
-          />
-          <div class="input-group-append">
-            <span class="input-group-text" id="basic-addon2">
-              +
-            </span>
+              <div className="form-inline mb-2 mt-2">
+                <input
+                  class="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  onKeyUp={handleKeyUp}
+                />
+
+                <div className="input-group-append">
+                  <button className="btn btn-success">
+                    <i className="fas fa-search "></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div className="col-md-6">
+          <img src={banner} alt="banner" style={{ width: "26rem" }} />
+        </div>
       </div>
+
       <Main />
     </div>
   );
 };
 
 const mapDispatchToProps = {
-    search: getData,
-    showAdd
+  search: getData,
+  showAdd,
 };
 
 export default connect(null, mapDispatchToProps)(Index);
