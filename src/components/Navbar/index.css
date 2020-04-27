@@ -1,0 +1,22 @@
+.link {
+  position: relative;
+}
+
+.link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin-top: 0px;
+  left: 0;
+  background: skyblue;
+  transition: width 0.4s ease;
+  -webkit-transition: width 0.4s ease;
+}
+
+.link:hover:after {
+  width: 80%;
+  left: 0;
+  background: aquamarine;
+}

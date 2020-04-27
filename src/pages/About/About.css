@@ -1,0 +1,11 @@
+.text h3 {
+  font-size: 20px;
+}
+
+.background-about img {
+  background-image: url(../../img/aboutt.jpg);
+  background-repeat: no-repeat;
+  height: 34rem;
+  width: 100%;
+  top: 7%;
+}

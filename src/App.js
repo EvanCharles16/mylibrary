@@ -8,6 +8,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Libraries from "./components/Libraries";
 
 import Navbar from "./components/Navbar";
+// import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Book from "./pages/Book/Book";
+import Contact from "./pages/Contact/Contact";
+
 import bg from "./img/bg.png";
 
 import reducers from "./reducers";
@@ -23,16 +28,14 @@ function App() {
     <Provider store={store}>
       <Router>
         <Navbar />
-        <img
-          src={bg}
-          style={{ width: "100%", height: "30rem", position: "absolute" }}
-        />
-        <div className="container">
+
+        <div>
           <div className="mt-4">
             <Switch>
-              <Route path="/libraries">
-                <Libraries />
-              </Route>
+              <Route exact path="/libraries" component={Libraries}></Route>
+              <Route exact path="/about" component={About} />
+              <Route exact path="/book" component={Book} />
+              <Route exact path="/contact" component={Contact} />
             </Switch>
           </div>
         </div>
