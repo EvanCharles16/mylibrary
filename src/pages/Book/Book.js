@@ -14,7 +14,6 @@ import {
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
 import { add, hideAdd } from "./../../actioncreators/libraries";
-// import Index from "../../components/Libraries/Item";
 
 import imgadd from "../../img/add.png";
 import pfoto from "../../img/6.png";
@@ -57,6 +56,9 @@ const Book = (props) => {
                       natural lead-in to additional content. This content is a
                       little bit longer.
                     </Card.Text>
+                    <button className="btn btn-outline-primary">
+                      Read More ..
+                    </button>
                   </Card.Body>
                 </Card>
                 <Card>
@@ -68,6 +70,9 @@ const Book = (props) => {
                       natural lead-in to additional content. This content is a
                       little bit longer.
                     </Card.Text>
+                    <button className="btn btn-outline-primary">
+                      Read More ..
+                    </button>
                   </Card.Body>
                 </Card>
 
@@ -80,6 +85,9 @@ const Book = (props) => {
                       natural lead-in to additional content. This content is a
                       little bit longer.
                     </Card.Text>
+                    <button className="btn btn-outline-primary">
+                      Read More ..
+                    </button>
                   </Card.Body>
                 </Card>
                 <Card>
@@ -91,6 +99,9 @@ const Book = (props) => {
                       natural lead-in to additional content. This content is a
                       little bit longer.
                     </Card.Text>
+                    <button className="btn btn-outline-primary">
+                      Read More ..
+                    </button>
                   </Card.Body>
                 </Card>
               </CardDeck>
@@ -111,6 +122,9 @@ const Book = (props) => {
                     lead-in to additional content. This content is a little bit
                     longer.
                   </Card.Text>
+                  <button className="btn btn-outline-primary">
+                    Read More ..
+                  </button>
                 </Card.Body>
               </Card>
               <Card>
@@ -122,16 +136,9 @@ const Book = (props) => {
                     lead-in to additional content. This content is a little bit
                     longer.
                   </Card.Text>
-                </Card.Body>
-              </Card>
-              <Card>
-                <Card.Img variant="top" src={pfoto} />
-                <Card.Body>
-                  <Card.Title>Card title</Card.Title>
-                  <Card.Text>
-                    This card has supporting text below as a natural lead-in to
-                    additional content.{" "}
-                  </Card.Text>
+                  <button className="btn btn-outline-primary">
+                    Read More ..
+                  </button>
                 </Card.Body>
               </Card>
               <Card>
@@ -140,9 +147,26 @@ const Book = (props) => {
                   <Card.Title>Card title</Card.Title>
                   <Card.Text>
                     This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This card has even longer
-                    content than the first to show that equal height action.
+                    lead-in to additional content. This content is a little bit
+                    longer.
                   </Card.Text>
+                  <button className="btn btn-outline-primary">
+                    Read More ..
+                  </button>
+                </Card.Body>
+              </Card>
+              <Card>
+                <Card.Img variant="top" src={pfoto} />
+                <Card.Body>
+                  <Card.Title>Card title</Card.Title>
+                  <Card.Text>
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </Card.Text>
+                  <button className="btn btn-outline-primary">
+                    Read More ..
+                  </button>
                 </Card.Body>
               </Card>
             </CardDeck>

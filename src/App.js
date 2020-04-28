@@ -13,8 +13,6 @@ import About from "./pages/About/About";
 import Book from "./pages/Book/Book";
 import Contact from "./pages/Contact/Contact";
 
-import bg from "./img/bg.png";
-
 import reducers from "./reducers";
 
 const store = createStore(reducers, applyMiddleware(thunk));
