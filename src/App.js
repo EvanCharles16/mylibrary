@@ -30,7 +30,7 @@ function App() {
         <div>
           <div className="mt-4">
             <Switch>
-              <Route exact path="/libraries" component={Libraries}></Route>
+              <Route exact path="/" component={Libraries}></Route>
               <Route exact path="/about" component={About} />
               <Route exact path="/book" component={Book} />
               <Route exact path="/contact" component={Contact} />
